@@ -1,7 +1,7 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
 import UserDate     from '../Common/UserDate';
-import Icon         from '../Common/Icon';
 import UserPicture  from '../User/UserPicture';
 
 export default class Revision extends React.Component {

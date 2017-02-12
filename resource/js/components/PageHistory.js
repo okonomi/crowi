@@ -1,6 +1,6 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
-import Icon from './Common/Icon';
 import PageRevisionList from './PageHistory/PageRevisionList';
 
 export default class PageHistory extends React.Component {

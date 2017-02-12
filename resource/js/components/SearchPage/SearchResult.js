@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
 import Page from '../PageList/Page';
 import SearchResultList from './SearchResultList';
@@ -29,7 +30,7 @@ export default class SearchResult extends React.Component {
     if (this.isError()) {
       return (
         <div className="content-main">
-          <i className="searcing fa fa-warning"></i> Error on searching.
+          <Icon className="searching" name="warning" /> Error on searching.
         </div>
       );
     }
@@ -45,7 +46,7 @@ export default class SearchResult extends React.Component {
       }
       return (
         <div className="content-main">
-            <i className="fa fa-meh-o" /> No page found with "{this.props.searchingKeyword}"{under}
+            <Icon name="meh-o" /> No page found with "{this.props.searchingKeyword}"{under}
         </div>
       );
 
@@ -60,7 +61,7 @@ export default class SearchResult extends React.Component {
           excludePathString={excludePathString}
           >
           <div className="page-list-option">
-            <a href={page.path}><i className="fa fa-arrow-circle-right" /></a>
+            <a href={page.path}><Icon name="arrow-circle-right" /></a>
           </div>
         </Page>
       );
@@ -86,7 +87,7 @@ export default class SearchResult extends React.Component {
             </nav>
           </div>
           <div className="col-md-8 search-result-content" id="search-result-content">
-            <div className="search-result-meta"><i className="fa fa-lightbulb-o" /> Found {this.props.searchResultMeta.total} pages with "{this.props.searchingKeyword}"</div>
+            <div className="search-result-meta"><Icon name="lightbulb-o" /> Found {this.props.searchResultMeta.total} pages with "{this.props.searchingKeyword}"</div>
             <SearchResultList
               pages={this.props.pages}
               searchingKeyword={this.props.searchingKeyword}

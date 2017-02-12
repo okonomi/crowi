@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
 export default class PageListMeta extends React.Component {
 
@@ -22,12 +23,12 @@ export default class PageListMeta extends React.Component {
 
     let CommentCount;
     if (page.commentCount > 0) {
-      CommentCount = <span><i className="fa fa-comment" />{page.commentCount}</span>;
+      CommentCount = <span><Icon name="comment" />{page.commentCount}</span>;
     }
 
     let LikerCount;
     if (page.liker.length > 0) {
-      LikerCount = <span><i className="fa fa-thumbs-up" />{page.liker.length}</span>;
+      LikerCount = <span><Icon name="thumbs-up" />{page.liker.length}</span>;
     }
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
 // Search.SearchForm
 export default class SearchForm extends React.Component {
@@ -44,7 +45,7 @@ export default class SearchForm extends React.Component {
           />
           <span className="input-group-btn">
             <button type="submit" className="btn btn-default">
-              <i className="search-top-icon fa fa-search"></i>
+              <Icon className="search-top-icon" name="search" />
             </button>
           </span>
       </form>

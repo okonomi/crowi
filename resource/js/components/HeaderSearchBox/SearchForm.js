@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
 // Header.SearchForm
 export default class SearchForm extends React.Component {
@@ -35,7 +36,7 @@ export default class SearchForm extends React.Component {
 
   getFormClearComponent() {
     if (this.state.keyword !== '') {
-      return <a className="search-top-clear" onClick={this.clearForm}><i className="fa fa-times-circle" /></a>;
+      return <a className="search-top-clear" onClick={this.clearForm}><Icon name="times-circle" /></a>;
 
     } else {
       return '';
@@ -85,7 +86,7 @@ export default class SearchForm extends React.Component {
         />
         <span className="input-group-btn">
           <button type="submit" className="btn btn-default">
-            <i className="search-top-icon fa fa-search"></i>
+            <Icon className="search-top-icon" name="search" />
           </button>
         </span>
         {formClear}

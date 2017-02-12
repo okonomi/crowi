@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-fontawesome';
 
 import ListView from '../PageList/ListView';
 
@@ -12,7 +13,7 @@ export default class SearchSuggest extends React.Component {
     if (this.props.searching) {
       return (
         <div className="search-suggest" id="search-suggest">
-          <i className="searcing fa fa-circle-o-notch fa-spin fa-fw"></i> Searching ...
+          <Icon className="searching" name="circle-o-notch" spin fixedWidth /> Searching ...
         </div>
       );
     }
@@ -20,7 +21,7 @@ export default class SearchSuggest extends React.Component {
     if (this.props.searchError !== null) {
       return (
         <div className="search-suggest" id="search-suggest">
-          <i className="searcing fa fa-warning"></i> Error on searching.
+          <Icon className="searching" name="warning" /> Error on searching.
         </div>
       );
     }
