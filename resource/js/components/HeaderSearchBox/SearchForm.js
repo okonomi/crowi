@@ -1,7 +1,8 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
 // Header.SearchForm
-export default class SearchForm extends React.Component {
+class SearchForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -65,6 +66,7 @@ export default class SearchForm extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     const formClear = this.getFormClearComponent();
 
     return (
@@ -102,3 +104,5 @@ SearchForm.propTypes = {
 SearchForm.defaultProps = {
   pollInterval: 1000,
 };
+
+export default translate('translation', { wait: true })(SearchForm);

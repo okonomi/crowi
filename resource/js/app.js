@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import i18n from './i18n';
+import { I18nextProvider } from 'react-i18next'; // as we build ourself via webpack
+
 import Crowi from './util/Crowi';
 import CrowiRenderer from './util/CrowiRenderer';
 
@@ -30,7 +33,7 @@ const crowiRenderer = new CrowiRenderer();
 window.crowiRenderer = crowiRenderer;
 
 const componentMappings = {
-  'search-top': <HeaderSearchBox />,
+  'search-top': <I18nextProvider i18n={i18n}><HeaderSearchBox /></I18nextProvider>,
   'search-page': <SearchPage />,
   'page-list-search': <PageListSearch />,
   //'revision-history': <PageHistory pageId={pageId} />,
