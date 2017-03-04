@@ -162,5 +162,12 @@
       "markdown": {
           "title": "記法"
       }
+  },
+
+  "header_search_box": {
+    "placeholder": "検索 ... ページのタイトル(パス)や内容",
+    "searching": "検索中...",
+    "error": "検索エラー",
+    "no_results": "\"{{keyword}}\" に一致するページは見つかりませんでした"
   }
 }

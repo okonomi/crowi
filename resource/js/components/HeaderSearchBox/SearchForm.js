@@ -78,7 +78,7 @@ class SearchForm extends React.Component {
           autocomplete="off"
           type="text"
           className="search-top-input form-control"
-          placeholder="Search ... Page Title (Path) and Content"
+          placeholder={t('header_search_box.placeholder')}
           name="q"
           value={this.state.keyword}
           onFocus={this.handleFocus}

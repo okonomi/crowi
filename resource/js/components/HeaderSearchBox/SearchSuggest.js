@@ -1,10 +1,13 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
 import ListView from '../PageList/ListView';
 
-export default class SearchSuggest extends React.Component {
+class SearchSuggest extends React.Component {
 
   render() {
+    const { t } = this.props;
+
     if (!this.props.focused) {
       return <div></div>;
     }
@@ -12,7 +15,7 @@ export default class SearchSuggest extends React.Component {
     if (this.props.searching) {
       return (
         <div className="search-suggest" id="search-suggest">
-          <i className="searcing fa fa-circle-o-notch fa-spin fa-fw"></i> Searching ...
+          <i className="searcing fa fa-circle-o-notch fa-spin fa-fw"></i> {t('header_search_box.searching')}
         </div>
       );
     }
@@ -20,7 +23,7 @@ export default class SearchSuggest extends React.Component {
     if (this.props.searchError !== null) {
       return (
         <div className="search-suggest" id="search-suggest">
-          <i className="searcing fa fa-warning"></i> Error on searching.
+          <i className="searcing fa fa-warning"></i> {t('header_search_box.error')}
         </div>
       );
     }
@@ -29,7 +32,7 @@ export default class SearchSuggest extends React.Component {
       if (this.props.searchingKeyword !== '') {
         return (
           <div className="search-suggest" id="search-suggest">
-            No results for "{this.props.searchingKeyword}".
+            {t('header_search_box.no_results', {keyword: this.props.searchingKeyword})}
           </div>
         );
       }
@@ -58,3 +61,5 @@ SearchSuggest.defaultProps = {
   searching: false,
   focused: false,
 };
+
+export default translate('translation', { wait: true })(SearchSuggest);

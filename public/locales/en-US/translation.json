@@ -162,5 +162,12 @@
       "markdown": {
           "title": "Markdown Rules"
       }
+  },
+
+  "header_search_box": {
+    "placeholder": "Search ... Page Title (Path) and Content",
+    "searching": "Searching ...",
+    "error": "Error on searching.",
+    "no_results": "No results for \"{{keyword}}\""
   }
 }
