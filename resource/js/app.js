@@ -29,6 +29,8 @@ const crowi = new Crowi({me: $('#content-main').data('current-username')}, windo
 window.crowi = crowi;
 crowi.fetchUsers();
 
+i18n.changeLanguage(crowi.userById[$('body').data('me')].lang);
+
 const crowiRenderer = new CrowiRenderer();
 window.crowiRenderer = crowiRenderer;
 

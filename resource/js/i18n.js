@@ -7,7 +7,6 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 i18n
   .use(XHR)
   // .use(Cache)
-  .use(LanguageDetector)
   .init({
     fallbackLng: 'en',
 
