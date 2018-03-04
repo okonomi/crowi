@@ -8,6 +8,7 @@ module.exports = {
     presentation: './resource/js/crowi-presentation.js',
     form:         './resource/js/crowi-form.js',
     admin:        './resource/js/crowi-admin.js',
+    bundled:      './resource/js/bundled.js',
     polyfill:     'babel-polyfill',
   },
   output: {
