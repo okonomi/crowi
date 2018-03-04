@@ -36,23 +36,47 @@ module.exports = [
   {
     entry: {
       crowi: './resource/css/crowi.scss',
+      'crowi-reveal': './resource/css/crowi-reveal.scss',
     },
     output: {
       path: path.resolve(__dirname, 'public/css'),
       filename: '[name].css'
     },
     devtool: 'inline-source-map',
+    resolve: {
+      modules: [
+        "node_modules"
+      ],
+      extensions: [
+        ".js", ".json",'.css', '.scss'
+      ],
+      alias: {
+        '../../lib/font': './../../node_modules/reveal.js/lib/font'
+      }
+    },
     module: {
       rules: [
         {
-          test: /.scss?$/,
+          test: [/\.scss$/, /\.css$/],
           use: ExtractTextPlugin.extract({
             use: [
               {
-                loader: 'css-loader'
+                loader: 'css-loader',
+                options: {
+                  sourceMap: true,
+                }
+              },
+              {
+                loader: 'resolve-url-loader',
+                options: {
+                  sourceMap: true,
+                }
               },
               {
                 loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                }
               }
             ]
           })
