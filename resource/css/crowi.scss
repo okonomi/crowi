@@ -2,9 +2,11 @@
 @import 'utilities';
 
 // import bootstrap
-@import 'bootstrap';
+$bootstrap-sass-asset-helper: true;
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-@import 'font-awesome';
+$fa-font-path: '~font-awesome/fonts';
+@import '~font-awesome/scss/font-awesome';
 
 // crowi component
 @import 'layout';
