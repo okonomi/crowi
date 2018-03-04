@@ -15,6 +15,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public/js'),
     filename: '[name].[hash].js'
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
