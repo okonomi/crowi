@@ -1,10 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const path = require('path');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
-var ManifestPlugin = require('webpack-manifest-plugin');
-
-var config = {
+module.exports = {
   entry: {
     app:          './resource/js/app.js',
     crowi:        './resource/js/crowi.js',
@@ -14,13 +11,8 @@ var config = {
     polyfill:     'babel-polyfill',
   },
   output: {
-    path: path.join(__dirname + "/public/js"),
-    filename: "[name].[hash].js"
-  },
-  resolve: {
-    modules: [
-      './node_modules', './resource/thirdparty-js',
-    ],
+    path: path.resolve(__dirname, 'public/js'),
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
@@ -33,24 +25,7 @@ var config = {
       }
     ]
   },
-  plugins: []
+  plugins: [
+    new ManifestPlugin(),
+  ]
 };
-
-if (process.env && process.env.NODE_ENV !== 'development') {
-  config.plugins = [
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new UglifyJsPlugin({
-      compress:{
-        warnings: false
-      }
-    }),
-  ];
-}
-
-config.plugins.push(new ManifestPlugin());
-
-module.exports = config;
