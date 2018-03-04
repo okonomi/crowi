@@ -5,8 +5,15 @@
 $bootstrap-sass-asset-helper: true;
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+// import font-awesome
 $fa-font-path: '~font-awesome/fonts';
 @import '~font-awesome/scss/font-awesome';
+
+// import highlight.js
+@import '~highlight.js/styles/tomorrow-night.css';
+
+// import diff2html
+@import '~diff2html/dist/diff2html.css';
 
 // crowi component
 @import 'layout';
